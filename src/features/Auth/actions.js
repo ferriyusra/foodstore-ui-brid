@@ -2,7 +2,7 @@
 import { USER_LOGIN, USER_LOGOUT } from './constants'
 
 // action userLogin
-export default function userLogin(user, token) {
+export function userLogin(user, token) {
     return {
         type: USER_LOGIN,
         user,
@@ -11,7 +11,7 @@ export default function userLogin(user, token) {
 }
 
 // action userLogout
-export default function userLogout() {
+export function userLogout() {
     return {
         type: USER_LOGOUT
     }

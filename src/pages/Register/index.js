@@ -7,7 +7,7 @@ import { LayoutOne, Card, FormControl, InputText, InputPassword, Button } from '
 import { rules } from './validation'
 
 import { registerUser } from '../../api/auth'
-import StoreLogo from '../../components'
+import StoreLogo from '../../components/StoreLogo'
 
 // statusList
 const statusList = {
@@ -31,6 +31,12 @@ export default function Register() {
     //  definisikan fungsi onSubmit untuk menangani submit form
     const onSubmit = async formData => {
 
+        // validasi email
+        // let { email } = formData
+        // if (email === fields.email) {
+        //     return setError('email', { type: 'equal', message: 'Email telah terdaftar' })
+        // }
+
         // dapatkan variabel password dan password_confirmation
         let { password, password_confirmation } = formData
 
@@ -52,12 +58,12 @@ export default function Register() {
             // untuk masing-masing field kita terapkan error dan tangkap pesan errornya
             fields.forEach(field => {
                 setError(field, {
-                    type: 'server', message:
+                    type: 'server',
+                    message:
                         data.fields[field]?.properties?.message
                 })
             });
             setStatus(statusList.error);
-            return;
         }
         setStatus(statusList.success);
         history.push('/register/berhasil');

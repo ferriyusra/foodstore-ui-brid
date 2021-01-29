@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import Home from './pages/Home'
 import Register from './pages/Register'
 import RegisterSuccess from './pages/RegisterSuccess'
-
+import Login from './pages/Login'
 
 import store from './app/store'
 
@@ -24,6 +24,9 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/register/berhasil">
             <RegisterSuccess />
           </Route>
