@@ -4,6 +4,8 @@ import 'upkit/dist/style.min.css'
 import { Provider } from 'react-redux'
 
 import Home from './pages/Home'
+import Register from './pages/Register'
+
 import store from './app/store'
 
 // import fungsi listen
@@ -20,6 +22,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
+          <Route path="/register" component={Register} />
           <Route path="/" component={Home} />
         </Switch>
       </Router>
