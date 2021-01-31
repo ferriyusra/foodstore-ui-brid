@@ -26,7 +26,7 @@ const menus = [
     {
         icon: '/images/menus/pastry.png',
         label: 'pastry',
-        id: ''
+        id: 'pastry'
     },
 
 ]
