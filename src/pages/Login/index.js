@@ -85,7 +85,7 @@ export default function Login() {
                             />
                         </FormControl>
                         <Button
-                            color="blue"
+                            color="red"
                             fitContainer
                             size="large"
                             disabled={status ===

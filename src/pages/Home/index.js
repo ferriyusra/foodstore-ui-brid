@@ -11,6 +11,7 @@ import {
 } from 'upkit'
 
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 // import BounceLoader from 'react-spinners/BounceLoader'
 import HashLoader from 'react-spinners/HashLoader'
 import FaSearch from '@meronex/icons/fa/FaSearch';
@@ -40,6 +41,7 @@ export default function Home() {
     let dispatch = useDispatch()
     let products = useSelector(state => state.products)
     let cart = useSelector(state => state.cart)
+    let history = useHistory()
 
     React.useEffect(() => {
         dispatch(fetchProducts())
@@ -50,7 +52,7 @@ export default function Home() {
             <LayoutSidebar
                 sidebar={
                     <SideNav
-                        color="blue"
+                        color="red"
                         items={menus}
                         verticalAlign="top"
                         active={products.category}
@@ -68,8 +70,8 @@ export default function Home() {
                                     iconBefore={
                                         <ButtonCircle
                                             size="small"
-                                            color="#3182CE"
-                                            icon={<FaSearch color="#3182CE" />} />
+                                            color="red"
+                                            icon={<FaSearch color="#FFFFFF" />} />
                                     }
                                     fullRound
                                     value={products.keyword}
@@ -96,7 +98,7 @@ export default function Home() {
                             {products.status === 'process' && !products.data.length ?
                                 <div className="flex justify-center text-center">
                                     <HashLoader
-                                        color="#3182CE"
+                                        color="red"
                                     />
                                 </div>
                                 : null}
@@ -107,7 +109,7 @@ export default function Home() {
                                         products.data.map((product, index) => {
                                             return <div key={index} className="p-2 mt-5">
                                                 <CardProduct
-                                                    color="blue"
+                                                    color="red"
                                                     title={product.name}
                                                     imgUrl={`${config.api_host}/upload/${product.image_url}`}
                                                     price={product.price}
@@ -119,7 +121,7 @@ export default function Home() {
 
                             <div className="text-center my-10">
                                 <Pagination
-                                    color="blue"
+                                    color="red"
                                     totalItems={products.totalItems}
                                     page={products.currentPage}
                                     perPage={products.perPage}
@@ -130,11 +132,12 @@ export default function Home() {
                             </div>
 
                         </div>
-                        <div className="w-full md:w-1/4 h-full shadow-lg border-r border-white bg-gray-100">
+                        <div className="w-full md:w-1/4 h-full shadow-lg border-r border-white bg-gray-200">
                             <Cart
                                 items={cart}
                                 onItemInc={item => dispatch(addItem(item))}
                                 onItemDec={item => dispatch(removeItem(item))}
+                                onCheckout={_ => history.push("/checkout")}
                             />
                         </div>
                     </div>

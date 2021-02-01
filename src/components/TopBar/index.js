@@ -22,11 +22,11 @@ export default function TopBar() {
         {/* div untuk sisi kanan TopBar */}
         <div className="mr-5 text-right">
             <Link to={auth.user ? '/account' : '/login'}>
-                <div className="mr-2 inline-block text-blue-600 font-bold">
+                <div className="mr-2 inline-block text-red-600 font-bold">
                     {auth?.user?.full_name}
                 </div>
                 <ButtonCircle
-                    color="blue"
+                    color="red"
                     icon={<FaUser />} />
             </Link>
         </div>
