@@ -18,6 +18,8 @@ import FaSearch from '@meronex/icons/fa/FaSearch';
 
 import menus from './menus'
 import TopBar from '../../components/TopBar'
+import Cart from '../../components/Cart';
+
 import { tags } from './tags'
 import { config } from '../../config'
 import {
@@ -30,12 +32,14 @@ import {
     toggleTag
 } from '../../features/Products/actions';
 
+import { addItem, removeItem } from '../../features/Cart/actions';
 
 
 export default function Home() {
 
     let dispatch = useDispatch()
     let products = useSelector(state => state.products)
+    let cart = useSelector(state => state.cart)
 
     React.useEffect(() => {
         dispatch(fetchProducts())
@@ -107,7 +111,7 @@ export default function Home() {
                                                     title={product.name}
                                                     imgUrl={`${config.api_host}/upload/${product.image_url}`}
                                                     price={product.price}
-                                                    onAddToCart={_ => null}
+                                                    onAddToCart={_ => dispatch(addItem(product))}
                                                 />
                                             </div>
                                         })}
@@ -127,7 +131,11 @@ export default function Home() {
 
                         </div>
                         <div className="w-full md:w-1/4 h-full shadow-lg border-r border-white bg-gray-100">
-                            Keranjang belanja di sini
+                            <Cart
+                                items={cart}
+                                onItemInc={item => dispatch(addItem(item))}
+                                onItemDec={item => dispatch(removeItem(item))}
+                            />
                         </div>
                     </div>
                 }

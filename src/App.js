@@ -13,11 +13,14 @@ import store from './app/store'
 // import fungsi listen
 import { listen } from './app/listener'
 
+import { getCart } from './api/cart'
+
 function App() {
 
   // panggil fungsi listen() sekali saja saat komponen selesai render pertama kali
   React.useEffect(() => {
     listen()
+    getCart()
   }, [])
 
   return (
