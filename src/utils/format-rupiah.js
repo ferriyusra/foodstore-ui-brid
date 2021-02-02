@@ -1,5 +1,3 @@
-import { func } from "prop-types";
-
 export function formatRupiah(number) {
 
     // mengecek apakah number bertipe bukan number? jika bukan number kita

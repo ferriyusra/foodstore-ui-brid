@@ -10,7 +10,6 @@ import {
 import FaArrowRight from '@meronex/icons/fa/FaArrowRight';
 import FaCartPlus from '@meronex/icons/fa/FaCartPlus';
 
-
 import { config } from '../../config';
 import { sumPrice } from '../../utils/sum-price'
 import { formatRupiah } from '../../utils/format-rupiah'

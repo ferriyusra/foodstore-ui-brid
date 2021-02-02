@@ -4,11 +4,14 @@ import store from '../app/store';
 import { setItems } from '../features/Cart/actions';
 
 export async function saveCart(token, cart) {
+
     return await axios.put(`${config.api_host}/api/carts`, { items: cart }, {
         headers: {
             authorization: `Bearer ${token}`
         }
     });
+
+
 }
 
 export async function getCart() {
