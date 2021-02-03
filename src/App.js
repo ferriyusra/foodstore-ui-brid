@@ -9,6 +9,7 @@ import RegisterSuccess from './pages/RegisterSuccess'
 import Login from './pages/Login'
 import UserAddressAdd from './pages/UserAddressAdd'
 import UserAddress from './pages/UserAdddress';
+import Checkout from './pages/Checkout'
 
 
 import store from './app/store'
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path="/register/berhasil">
             <RegisterSuccess />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
           </Route>
           <Route path="/alamat-pengiriman/tambah">
             <UserAddressAdd />
