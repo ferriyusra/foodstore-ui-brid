@@ -8,6 +8,8 @@ import Register from './pages/Register'
 import RegisterSuccess from './pages/RegisterSuccess'
 import Login from './pages/Login'
 import UserAddressAdd from './pages/UserAddressAdd'
+import UserAddress from './pages/UserAdddress';
+
 
 import store from './app/store'
 
@@ -20,9 +22,9 @@ function App() {
 
   // panggil fungsi listen() sekali saja saat komponen selesai render pertama kali
   React.useEffect(() => {
-    listen()
-    getCart()
-  }, [])
+    listen();
+    getCart();
+  }, []);
 
   return (
     <Provider store={store}>
@@ -36,6 +38,9 @@ function App() {
           </Route>
           <Route path="/alamat-pengiriman/tambah">
             <UserAddressAdd />
+          </Route>
+          <Route path="/alamat-pengiriman/">
+            <UserAddress />
           </Route>
           <Route path="/register" component={Register} />
           <Route path="/" component={Home} />

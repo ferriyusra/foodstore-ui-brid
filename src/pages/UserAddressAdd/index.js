@@ -67,8 +67,8 @@ export default function UserAddressAdd() {
         <LayoutOne>
             <TopBar />
             <br />
-            <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="mb-10">
+                <form onSubmit={handleSubmit(onSubmit)} >
                     <FormControl label="Nama alamat" errorMessage=
                         {errors.nama_alamat?.message} color="black">
                         <InputText
@@ -132,7 +132,7 @@ export default function UserAddressAdd() {
                             ref={register(rules.detail_alamat)}
                         />
                     </FormControl>
-                    <Button fitContainer>
+                    <Button fitContainer >
                         Simpan
                     </Button>
                 </form>

@@ -7,7 +7,7 @@ export async function getAddress(params) {
     // hitung berapa item yang harus diskip berdasarkan params.page dan params.limi
     // let skip = params.page * params.limit - params.limit
 
-    return await axios.get(`${config.api_host}/api/delivery-address`, {
+    return await axios.get(`${config.api_host}/api/delivery-addresses`, {
         paramas: {
             limit: params.limit,
             skip: params.page * params.limit - params.limit

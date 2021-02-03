@@ -5,7 +5,8 @@ import {
     SET_ITEMS
 } from './constants'
 
-const initialState = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+const initialState =
+    localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
