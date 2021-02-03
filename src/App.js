@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Register from './pages/Register'
 import RegisterSuccess from './pages/RegisterSuccess'
 import Login from './pages/Login'
+import UserAddressAdd from './pages/UserAddressAdd'
 
 import store from './app/store'
 
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/register/berhasil">
             <RegisterSuccess />
+          </Route>
+          <Route path="/alamat-pengiriman/tambah">
+            <UserAddressAdd />
           </Route>
           <Route path="/register" component={Register} />
           <Route path="/" component={Home} />
