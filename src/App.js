@@ -11,6 +11,8 @@ import UserAddressAdd from './pages/UserAddressAdd'
 import UserAddress from './pages/UserAdddress';
 import Checkout from './pages/Checkout'
 import Invoice from './pages/Invoice'
+import UserAccount from './pages/UserAccount'
+import UserOrders from './pages/UserOrders'
 
 
 import store from './app/store'
@@ -32,7 +34,12 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-
+          <Route path="/pesanan">
+            <UserOrders />
+          </Route>
+          <Route path="/account">
+            <UserAccount />
+          </Route>
           <Route path="/invoice/:order_id">
             <Invoice />
           </Route>
