@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import UserAddressAdd from './pages/UserAddressAdd'
 import UserAddress from './pages/UserAdddress';
 import Checkout from './pages/Checkout'
+import Invoice from './pages/Invoice'
 
 
 import store from './app/store'
@@ -31,11 +32,9 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register/berhasil">
-            <RegisterSuccess />
+
+          <Route path="/invoice/:order_id">
+            <Invoice />
           </Route>
           <Route path="/checkout">
             <Checkout />
@@ -46,8 +45,16 @@ function App() {
           <Route path="/alamat-pengiriman/">
             <UserAddress />
           </Route>
+          <Route path="/register/berhasil">
+            <RegisterSuccess />
+          </Route>
           <Route path="/register" component={Register} />
-          <Route path="/" component={Home} />
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
         </Switch>
       </Router>
     </Provider>

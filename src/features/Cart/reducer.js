@@ -12,11 +12,9 @@ export default function reducer(state = initialState, action) {
     switch (action.type) {
 
         case ADD_ITEM:
-            // cek apakah item sudah atau belum berdarakan _id
             if (state.find(item => item._id === action.item._id)) {
                 return state.map(item => ({ ...item, qty: item._id === action.item._id ? item.qty + 1 : item.qty }));
             } else {
-                //  apabila item belum ada di state cart,
                 return [...state, { ...action.item, qty: 1 }];
             }
 
