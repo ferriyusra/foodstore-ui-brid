@@ -39,7 +39,7 @@ const menus = [
     {
         label: 'Logout',
         icon: <IconWrapper><FaArrowRight /></IconWrapper>,
-        url: '/'
+        url: '/logout'
     },
 ]
 

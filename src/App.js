@@ -13,6 +13,10 @@ import Checkout from './pages/Checkout'
 import Invoice from './pages/Invoice'
 import UserAccount from './pages/UserAccount'
 import UserOrders from './pages/UserOrders'
+import Logout from './pages/Logout'
+
+import GuardRoute from './components/GuardRoute'
+import GuestOnlyRoute from './components/GuestOnlyRoute'
 
 
 import store from './app/store'
@@ -34,31 +38,36 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route path="/pesanan">
+          <GuardRoute path="/logout">
+            <Logout />
+          </GuardRoute>
+          <GuardRoute path="/pesanan">
             <UserOrders />
-          </Route>
-          <Route path="/account">
+          </GuardRoute>
+          <GuardRoute path="/account">
             <UserAccount />
-          </Route>
-          <Route path="/invoice/:order_id">
+          </GuardRoute>
+          <GuardRoute path="/invoice/:order_id">
             <Invoice />
-          </Route>
-          <Route path="/checkout">
+          </GuardRoute>
+          <GuardRoute path="/checkout">
             <Checkout />
-          </Route>
-          <Route path="/alamat-pengiriman/tambah">
+          </GuardRoute>
+          <GuardRoute path="/alamat-pengiriman/tambah">
             <UserAddressAdd />
-          </Route>
-          <Route path="/alamat-pengiriman/">
+          </GuardRoute>
+          <GuardRoute path="/alamat-pengiriman">
             <UserAddress />
-          </Route>
-          <Route path="/register/berhasil">
+          </GuardRoute>
+          <GuestOnlyRoute path="/register/berhasil">
             <RegisterSuccess />
-          </Route>
-          <Route path="/register" component={Register} />
-          <Route path="/login">
+          </GuestOnlyRoute>
+          <GuestOnlyRoute path="/register">
+            <Register />
+          </GuestOnlyRoute>
+          <GuestOnlyRoute path="/login">
             <Login />
-          </Route>
+          </GuestOnlyRoute>
           <Route path="/">
             <Home />
           </Route>

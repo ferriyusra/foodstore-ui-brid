@@ -16,7 +16,7 @@ import {
 import { getProducts } from '../../api/product'
 
 // bungkus `getProducts` dengan `debounce`
-let debouncedFetchProducts = debounce(getProducts, 1000)
+let debouncedFetchProducts = debounce(getProducts, 2000)
 
 
 export const fetchProducts = () => {

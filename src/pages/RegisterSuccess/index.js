@@ -21,7 +21,7 @@ export default function RegisterSuccess() {
 
                         <Link to="/login">
                             <Button
-                                color="blue"
+                                color="red"
                                 fitContainer
                             >
                                 Masuk

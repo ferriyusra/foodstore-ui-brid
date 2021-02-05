@@ -13,12 +13,12 @@ const columns = [
     {
         Header: '',
         id: 'Status',
-        accesor: order => {
+        accessor: order => {
             return <div>
                 #{order.order_number} <br />
                 <StatusLabel status={order.status} />
             </div>
-        }
+        },
     },
     {
         Header: 'Items',
@@ -26,7 +26,10 @@ const columns = [
             return <div>
                 {order.order_items.map(item => {
                     return <div key={item._id}>
-                        {item.name} {item.qty}
+                        {`Nama item : ${item.name}`}
+                        <br />
+                        {`Jumlah : ${item.qty}`}
+                        <hr />
                     </div>
                 })}
             </div>
