@@ -107,12 +107,15 @@ export default function Checkout() {
             delivery_fee: config.global_ongkir,
             delivery_address: selectedAddress._id,
         }
-
+        // kirimkan `payload` ke Web API untuk membuat order baru
         let { data } = await createOrder(payload);
 
         if (data?.error) return;
 
+        // redirect ke halaman invoice
         history.push(`/invoice/${data._id}`);
+
+        // hapus semua item di keranjang belanja
         dispatch(clearItems());
 
     }
@@ -130,7 +133,7 @@ export default function Checkout() {
             steps={steps}
             active={activeStep}
         />
-
+        <br />
         {activeStep === 0 ?
             <div>
                 <br /> <br />
@@ -193,7 +196,6 @@ export default function Checkout() {
                             onClick={_ => setActiveStep(activeStep - 1)}
                             color="gray"
                             iconBefore={<FaArrowLeft />}>
-
                             Sebelumnya
                           </Button>
                     </div>

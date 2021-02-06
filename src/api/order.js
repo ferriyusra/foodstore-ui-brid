@@ -1,4 +1,4 @@
-import * as axios from 'axios';
+import axios from 'axios';
 import { config } from '../config';
 
 export async function getOrders(params) {

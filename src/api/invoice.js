@@ -12,4 +12,11 @@ export async function getInvoiceByOrderId(order_id) {
                 authorization: `Bearer ${token}`
             }
         });
+
+    // console.log(await axios
+    //     .get(`${config.api_host}/api/invoices/${order_id}`, {
+    //         headers: {
+    //             authorization: `Bearer ${token}`
+    //         }
+    //     }));
 }

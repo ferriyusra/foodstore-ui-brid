@@ -34,6 +34,7 @@ function App() {
     getCart();
   }, []);
 
+
   return (
     <Provider store={store}>
       <Router>

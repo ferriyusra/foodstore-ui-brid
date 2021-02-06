@@ -50,7 +50,7 @@ const columns = [
                 <Link to={`/invoice/${order._id}`}>
                     <Button color="gray" iconBefore={<FaFileInvoiceDollar />}>
                         Invoice
-                    </Button>
+          </Button>
                 </Link>
             </div>
         }

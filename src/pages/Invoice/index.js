@@ -19,15 +19,19 @@ export default function Invoice() {
     React.useEffect(() => {
         getInvoiceByOrderId(params?.order_id)
             .then(({ data }) => {
+                console.log(params);
 
                 if (data?.error) {
-                    setError(data.message || "Terjadi keslahan yang tidak diketahui");
+                    setError(data.message || "Terjadi kesalahan yang tidak diketahui");
                 }
-
-                setInvoice(data);
+                //  update state invoice
+                setInvoice(data)
             })
-            .finally(() => setStatus('idle'));
+            // setStatus menjadi idle
+            .finally(() => setStatus('idle'))
+
     }, [params]);
+
 
     if (error.length) {
         return (

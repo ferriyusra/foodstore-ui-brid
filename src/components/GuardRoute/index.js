@@ -7,9 +7,7 @@ const GuardRoute = ({ children, ...rest }) => {
 
     let { user } = useSelector(state => state.auth)
 
-    return <Route>
-        {/* Jika user memiliki nilai, artinya user sudah login, maka kita tampilkan prop children, 
-        jika user tidak bernilai maka kita arahkan ke halaman login */}
+    return <Route {...rest}>
         {user ? children : <Redirect to="/login" />}
     </Route>
 
